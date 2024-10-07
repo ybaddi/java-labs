@@ -70,6 +70,44 @@ public class Main {
         }
         System.out.println(res);
 
+        delimiter();
+        Address ad1=new Address("qods",1294,"casa");
+        Address ad2=new Address("boustane",1294,"el jadida");
+        Personne p =new Personne(1,"ahmed", "adil", ad1);
+        System.out.println(p);
+
+        delimiter();
+
+        Personne[] ps = new Personne[4];
+        Personne p1 =new Ensignient(1,"ahmed", "adil", ad1, 15500);
+        Personne p2 =new Ensignient(1,"ahmed", "adil", ad1, 15500);
+        Personne p3 =new Etudiant(1,"ahmed", "adil", ad1, 1);
+        Personne p4 =new Etudiant(1,"ahmed", "adil", ad1, 1);
+        ps[0]=p1;
+        ps[1]=p2;
+        ps[2]=p3;
+        ps[3]=p4;
+        for(Personne es : ps){
+            if(es instanceof Ensignient){
+                System.out.println(((Ensignient) es).getSalaire());
+            }else{
+                System.out.println(((Etudiant) es).getLevel());
+            }
+            // autre method
+            System.out.println(es.getClass().getSimpleName());
+          if(es.getClass().getSimpleName() == "Ensignient"){
+                System.out.println(((Ensignient) es).getSalaire());
+            }else if(es.getClass().getSimpleName() == "Etudiant"){
+                System.out.println(((Etudiant) es).getLevel());
+            }
+        }
+
+
+
+    }
+
+    private static void delimiter() {
+        System.out.println("===================");
     }
 
 }
