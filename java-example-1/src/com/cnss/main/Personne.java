@@ -1,6 +1,6 @@
 package com.cnss.main;
 
-public abstract class Personne {
+public  class Personne {
     private int num;
     private String nom;
     private String prenom;
@@ -55,5 +55,5 @@ public abstract class Personne {
         this.address = address;
     }
 
-    public abstract String fullName();
+    // public abstract String fullName();
 }
